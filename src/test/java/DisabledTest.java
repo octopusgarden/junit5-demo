@@ -5,7 +5,7 @@ import org.junit.gen5.api.Test;
 import static org.junit.gen5.api.Assertions.assertTrue;
 
 @Disabled
-public class ExampleDisabledTest {
+public class DisabledTest {
 
     @Test
     @DisplayName("When method is called it should return one")
