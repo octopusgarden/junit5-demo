@@ -1,5 +1,4 @@
 import org.junit.gen5.api.Disabled;
-import org.junit.gen5.api.DisplayName;
 import org.junit.gen5.api.Test;
 
 import static org.junit.gen5.api.Assertions.assertTrue;
@@ -8,12 +7,13 @@ import static org.junit.gen5.api.Assertions.assertTrue;
 public class DisabledTest {
 
     @Test
-    @DisplayName("When method is called it should return one")
+    @Disabled
     public void whenMethodIsCalledReturnOneDisabled() throws Exception {
         Example example = new Example();
         assertTrue(example.One() == 1);
     }
 
+    @Test
     public void whenMethodIsCalledReturnOne() throws Exception {
         Example example = new Example();
         assertTrue(example.One() == 1);
