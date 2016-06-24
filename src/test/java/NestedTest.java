@@ -3,15 +3,15 @@ import org.junit.gen5.api.BeforeEach;
 import org.junit.gen5.api.Nested;
 import org.junit.gen5.api.Test;
 
-public class NestedTest {
+class NestedTest {
 
     @BeforeAll
-    public static void beforeAll() {
+    static void beforeAll() {
         System.out.println("Prepare ALL test");
     }
 
     @BeforeEach
-    public void beforeEach() {
+    void beforeEach() {
         System.out.println("Prepare test");
     }
 

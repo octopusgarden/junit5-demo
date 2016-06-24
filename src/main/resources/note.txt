@@ -3,4 +3,6 @@ mvn test -Dtest=
 1. Annotation @DisplayName.
 See DisplayNameTest. You can also put emoticons.
 
-2. @Ignore is not @Disabled
+2. @Ignore is  @Disabled
+
+3. @BeforeClass, @Before, @After, and @AfterClass are @BeforeAll, @BeforeEach, @AfterEach, and @AfterAll
