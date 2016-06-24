@@ -13,3 +13,6 @@ See BeforeTest
 
 5. Annotation @Nested. You can group tests by putting them in inner class.
 See NestedTest
+
+6. Assertion and Assumption. You can use lambda in messages.
+See AssertionTest and AssumptionTest.
