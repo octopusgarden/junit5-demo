@@ -3,10 +3,11 @@ import org.junit.gen5.api.Test;
 
 import static org.junit.gen5.api.Assertions.assertTrue;
 
+@DisplayName("Try Junit5 display name annotation")
 public class DisplayNameTest {
 
     @Test
-    @DisplayName("When method is called it should return one")
+    @DisplayName("When method is called it should return one ╯°□°）╯")
     public void whenMethodIsCalledReturnOne() throws Exception {
         Example example = new Example();
         assertTrue(example.One() == 1);

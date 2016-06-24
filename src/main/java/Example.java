@@ -1,5 +1,5 @@
 public class Example {
     public int One() {
-        return 1;
+        return 2;
     }
 }
