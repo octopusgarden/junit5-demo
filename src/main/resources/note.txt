@@ -1,0 +1,6 @@
+mvn test -Dtest=
+
+1. Annotation @DisplayName.
+See DisplayNameTest. You can also put emoticons.
+
+2. @Ignore is not @Disabled

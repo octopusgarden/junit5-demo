@@ -3,11 +3,11 @@ import org.junit.gen5.api.Test;
 
 import static org.junit.gen5.api.Assertions.assertTrue;
 
-@Disabled
+@Disabled("test is skipped")
 public class DisabledTest {
 
     @Test
-    @Disabled
+    @Disabled("test is skipped")
     public void whenMethodIsCalledReturnOneDisabled() throws Exception {
         Example example = new Example();
         assertTrue(example.One() == 1);
