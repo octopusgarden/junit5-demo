@@ -16,3 +16,5 @@ See NestedTest
 
 6. Assertion and Assumption. You can use lambda in messages.
 See AssertionTest and AssumptionTest.
+
+7. assertAll allows you to assert and report multiple asserts.
