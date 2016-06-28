@@ -18,3 +18,6 @@ See NestedTest
 See AssertionTest and AssumptionTest.
 
 7. assertAll allows you to assert and report multiple asserts.
+
+8. Exception can be checked using assertThrows and assigned to a variable using expectThrows
+See ExceptionTest
