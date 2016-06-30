@@ -1,0 +1,18 @@
+mvn test -Dtest=
+
+1. Test can be package private
+
+2. Annotation @DisplayName.
+See DisplayNameTest. You can also put emoticons.
+
+3. @Ignore is @Disabled
+See DisabledTest
+
+4. @BeforeClass, @Before, @After, and @AfterClass are @BeforeAll, @BeforeEach, @AfterEach, and @AfterAll
+See BeforeTest
+
+5. Annotation @Nested. You can group tests by putting them in inner class.
+See NestedTest
+
+6. Assertion and Assumption. You can use lambda in messages.
+See AssertionTest and AssumptionTest.

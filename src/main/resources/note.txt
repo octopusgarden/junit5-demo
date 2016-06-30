@@ -14,10 +14,13 @@ See BeforeTest
 5. Annotation @Nested. You can group tests by putting them in inner class.
 See NestedTest
 
-6. Assertion and Assumption. You can use lambda in messages.
+6. Tag and filtering using @Tag.
+Annotation can also be composed. Instead of typing @Tag("slow") use composed tag @Slow.
+
+7. Assertion and Assumption. You can use lambda in messages.
 See AssertionTest and AssumptionTest.
 
-7. assertAll allows you to assert and report multiple asserts.
+8. assertAll allows you to assert and report multiple asserts.
 
-8. Exception can be checked using assertThrows and assigned to a variable using expectThrows
+9. Exception can be checked using assertThrows and assigned to a variable using expectThrows
 See ExceptionTest
