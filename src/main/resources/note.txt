@@ -2,7 +2,7 @@ mvn test -Dtest=
 
 1. Test can be package private
 
-2. Annotation @DisplayName.
+2. Annotation @DisplayName. In the report this display name is showed.
 See DisplayNameTest. You can also put emoticons.
 
 3. @Ignore is @Disabled
