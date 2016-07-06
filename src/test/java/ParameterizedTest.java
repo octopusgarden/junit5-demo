@@ -1,18 +1,34 @@
-import org.junit.gen5.api.DisplayName;
-import org.junit.gen5.api.Test;
-import org.junit.gen5.api.TestInfo;
-import org.junit.gen5.api.TestReporter;
 
+
+
+import org.junit.gen5.api.*;
+
+import java.util.HashMap;
+
+import static org.junit.gen5.api.Assertions.assertEquals;
 import static org.junit.gen5.api.Assertions.assertTrue;
 
 class ParameterizedTest {
 
     @Test
-    @DisplayName("my example of test")
-    void testWithParameter(TestInfo info, TestReporter reporter) {
-        System.out.println("Test " + info.getDisplayName() + " is executed.");
-        assertTrue(true);
+    @DisplayName("TEST 1")
+    @Tag("my tag")
+    void testWithInfoParameter(TestInfo info) {
+        assertEquals("TEST 1", info.getDisplayName());
 
+        assertTrue(false);
+    }
+
+    @Test
+    void testWithReporterParameter(TestReporter reporter) {
         reporter.publishEntry("a key", "a value");
+
+        HashMap<String, String> values = new HashMap<>();
+        values.put("user name", "dk38");
+        values.put("award year", "1974");
+
+        reporter.publishEntry(values);
+
+        assertTrue(false);
     }
 }
