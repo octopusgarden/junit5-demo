@@ -8,8 +8,7 @@ public class AssumptionTest {
 
     @Test
     void testOnlyOnDeveloperWorkstation() {
-        assumeTrue("CI".equals(System.getenv("ENV")),
-                () -> "Aborting test: not on developer workstation");
+        assumeTrue("CI".equals(System.getenv("ENV")), () -> "Aborting test: not on developer workstation");
         assertEquals(1 + 1, 3);
     }
 

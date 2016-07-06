@@ -12,12 +12,13 @@ See DisabledTest
 See BeforeTest
 
 5. Annotation @Nested. You can group tests by putting them in inner class.
+@BeforeAll and @AfterAll do not work, because Java does not allow static members in inner classes.
 See NestedTest
 
 6. Tag and filtering using @Tag.
 Annotation can also be composed. Instead of typing @Tag("slow") use composed tag @Slow.
 
-7. Assertion and Assumption. You can use lambda in messages.
+7. Assertion and Assumption. You can use lambda in messages. The messages are evaluated lazily.
 See AssertionTest and AssumptionTest.
 
 8. assertAll allows you to assert and report multiple asserts.

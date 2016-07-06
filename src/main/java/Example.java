@@ -1,9 +1,9 @@
-public class Example {
-    public int One() {
+class Example {
+    int One() {
         return 2;
     }
 
-    public int DivideByZero() {
+    int DivideByZero() {
         return 3 / 0;
     }
 }

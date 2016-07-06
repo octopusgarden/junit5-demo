@@ -9,9 +9,9 @@ class TagTest {
     void tagTest() throws Exception {
 
     }
-    
+
     @Slow
-    void composeTagTest(){
-    	
+    void composeTagTest() {
+
     }
 }

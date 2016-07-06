@@ -3,7 +3,7 @@ import org.junit.gen5.api.Test;
 import static org.junit.gen5.api.Assertions.*;
 
 class ExceptionTest {
-    private Example example = new Example();
+    private final Example example = new Example();
 
     @Test
     void testException() {

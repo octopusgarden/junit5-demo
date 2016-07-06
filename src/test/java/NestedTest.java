@@ -21,6 +21,11 @@ class NestedTest {
         public void testOne() {
             System.out.println("testOne");
         }
+
+        @Test
+        public void testOneOne() {
+            System.out.println("testOneOne");
+        }
     }
 
     @Nested
