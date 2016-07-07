@@ -25,3 +25,6 @@ See AssertionTest and AssumptionTest.
 
 9. Exception can be checked using assertThrows and assigned to a variable using expectThrows
 See ExceptionTest
+
+10. Extension can be used as opposed to Runner, @Rule, and @ClassRule. Use @ExtendWith.
+See ExtensionsTest
