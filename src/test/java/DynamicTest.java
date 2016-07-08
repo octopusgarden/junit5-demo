@@ -1,15 +1,3 @@
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-
-
 class DynamicTest {
 
 //	// This will result in a JUnitException!
