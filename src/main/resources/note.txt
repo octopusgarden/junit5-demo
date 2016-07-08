@@ -27,4 +27,6 @@ See AssertionTest and AssumptionTest.
 See ExceptionTest
 
 10. Extension can be used as opposed to Runner, @Rule, and @ClassRule. Use @ExtendWith.
-See ExtensionsTest
+
+11. Conditional execution can be done by  implementing TestExecutionCondition or ContainerExecutionCondition
+See ConditionalExecutionTest
