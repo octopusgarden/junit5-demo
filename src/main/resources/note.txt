@@ -30,3 +30,6 @@ See ExceptionTest
 
 11. Conditional execution can be done by  implementing TestExecutionCondition or ContainerExecutionCondition
 See ConditionalExecutionTest
+
+12. Post Processing can be done by  implementing InstancePostProcessor
+See ExtensionTest
