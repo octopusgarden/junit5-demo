@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 
 
-class DynamicTests {
+class DynamicTest {
 
 //	// This will result in a JUnitException!
 //	@TestFactory

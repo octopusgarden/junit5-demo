@@ -5,7 +5,7 @@ import org.junit.gen5.api.extension.ExtendWith;
 import static org.junit.gen5.api.Assertions.assertEquals;
 
 
-class ExtensionsTest {
+class CustomParameterTest {
 
     @Test
     @ExtendWith(CustomParameterResolver.class)
