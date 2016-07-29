@@ -1,7 +1,7 @@
-import org.junit.gen5.api.DisplayName;
-import org.junit.gen5.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.gen5.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Try Junit5 display name annotation")
 class DisplayNameTest {
@@ -12,4 +12,6 @@ class DisplayNameTest {
         Example example = new Example();
         assertTrue(example.One() == 1);
     }
+
+
 }

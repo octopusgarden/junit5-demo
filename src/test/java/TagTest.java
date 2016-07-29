@@ -1,6 +1,6 @@
-import org.junit.gen5.api.Tag;
-import org.junit.gen5.api.Tags;
-import org.junit.gen5.api.Test;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
 
 @Tag("slow-test")
 class TagTest {

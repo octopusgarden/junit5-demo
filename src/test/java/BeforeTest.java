@@ -1,4 +1,4 @@
-import org.junit.gen5.api.*;
+import org.junit.jupiter.api.*;
 
 class BeforeTest {
     @BeforeAll

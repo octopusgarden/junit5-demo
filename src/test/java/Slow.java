@@ -1,4 +1,4 @@
-import org.junit.gen5.api.Tag;
+import org.junit.jupiter.api.Tag;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

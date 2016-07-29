@@ -1,10 +1,12 @@
-import org.junit.gen5.api.extension.*;
-import org.junit.gen5.commons.util.AnnotationUtils;
+
+
+import org.junit.jupiter.api.extension.*;
+import org.junit.platform.commons.util.AnnotationUtils;
 
 import java.util.Optional;
 import java.util.Random;
 
-public class ConditionalDisabledCondition implements TestExecutionCondition, ContainerExecutionCondition {
+class ConditionalDisabledCondition implements TestExecutionCondition, ContainerExecutionCondition {
 
     private final Random random = new Random();
 

@@ -1,6 +1,6 @@
 class CustomParameter {
 
-    private String value;
+    private final String value;
 
     public CustomParameter(String value) {
         this.value = value;

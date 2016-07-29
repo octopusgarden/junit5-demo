@@ -1,13 +1,8 @@
-
-import static org.junit.gen5.api.Assertions.assertEquals;
+import org.junit.jupiter.api.*;
 
 import java.util.HashMap;
 
-import org.junit.gen5.api.DisplayName;
-import org.junit.gen5.api.Tag;
-import org.junit.gen5.api.Test;
-import org.junit.gen5.api.TestInfo;
-import org.junit.gen5.api.TestReporter;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ParameterizedTest {
 
