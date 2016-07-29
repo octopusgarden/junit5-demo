@@ -1,39 +1,39 @@
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 class NestedTest {
-
-    @BeforeAll
-    static void beforeAll() {
-        System.out.println("Prepare ALL test");
-    }
-
-    @BeforeEach
-    void beforeEach() {
-        System.out.println("Prepare test");
-    }
+    private Example example = new Example();
 
     @Nested
+    @DisplayName("When example method one is called")
     class TestFunctionalityOne {
         @Test
-        public void testOne() {
-            System.out.println("testOne");
+        @DisplayName("then it should return one")
+        void testOne() {
+            assertTrue(example.One() == 1);
         }
 
         @Test
-        public void testOneOne() {
-            System.out.println("testOneOne");
+        @DisplayName("then it should not return two")
+        void testTwo() {
+            assertFalse(example.One() == 2);
         }
     }
 
     @Nested
+    @DisplayName("When example method two is called")
     class TestFunctionalityTwo {
         @Test
-        public void testTwo() {
-            System.out.println("testTwo");
+        @DisplayName("then it should return two")
+        public void testOne() {
+            assertTrue(example.Two() == 2);
         }
-    }
 
+    }
 }

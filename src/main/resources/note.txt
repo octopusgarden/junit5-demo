@@ -2,18 +2,18 @@ mvn test -Dtest=
 
 1. Test can be package private
 
-2. Annotation @DisplayName. In the report this display name is showed.
-See DisplayNameTest. You can also put emoticons.
-
-3. @Ignore is @Disabled
+2. @Ignore is @Disabled
 See DisabledTest
 
-4. @BeforeClass, @Before, @After, and @AfterClass are @BeforeAll, @BeforeEach, @AfterEach, and @AfterAll
+3. @BeforeClass, @Before, @After, and @AfterClass are @BeforeAll, @BeforeEach, @AfterEach, and @AfterAll
 See BeforeTest
+
+4. Annotation @DisplayName. In the report this display name is showed.
+See DisplayNameTest. You can also put emoticons.
 
 5. Annotation @Nested. You can group tests by putting them in inner class.
 @BeforeAll and @AfterAll do not work, because Java does not allow static members in inner classes.
-See NestedTest
+See NestedTest. Combined with @DisplayName the grouped test can be understood easier.
 
 6. Tag and filtering using @Tag.
 Annotation can also be composed. Instead of typing @Tag("slow") use composed tag @Slow.
