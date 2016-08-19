@@ -33,3 +33,7 @@ See ConditionalExecutionTest
 
 12. Post Processing can be done by  implementing InstancePostProcessor
 See ExtensionTest
+
+13. DynamicTest define tests at runtime.
+See DynamicTestDemoTest. @TestFactory return Iterable, Iterator, Collection or Stream
+*Intellij does not run @TestFactory. Use mvn test -Dtest=DynamicTestDemoTest
