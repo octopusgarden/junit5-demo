@@ -9,7 +9,7 @@ class ConditionalExecutionTest {
     @Test
     @ConditionalDisabled
     void testConditionalTest() {
-        assertTrue(false, () -> "This test is runned");
+        assertTrue(false, () -> "This test is run");
     }
 
 }
