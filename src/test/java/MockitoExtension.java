@@ -1,35 +1,52 @@
-//
-//
-//import org.junit.gen5.api.extension.*;
-//
-//import java.lang.reflect.Parameter;
-//
-//import static org.mockito.Mockito.mock;
-//
-//class MockitoExtension implements InstancePostProcessor, MethodParameterResolver {
-//
-//    private static final ExtensionContext.Namespace namespace = org.junit.gen5.api.extension.ExtensionContext.Namespace.of(MockitoExtension.class);
-//
-//    @Override
-//    public void postProcessTestInstance(TestExtensionContext context) {
-//        //MockitoAnnotations.initMocks(context.getTestInstance());
-//    }
-//
-//    @Override
-//    public boolean supports(Parameter parameter, MethodInvocationContext methodInvocationContext,
-//                            ExtensionContext extensionContext) {
-//
-//        return parameter.isAnnotationPresent(InjectMock.class);
-//    }
-//
-//    @Override
-//    public Object resolve(Parameter parameter, MethodInvocationContext methodInvocationContext,
-//                          ExtensionContext extensionContext) throws ParameterResolutionException {
-//        ExtensionContext.Store mocks = extensionContext.getStore(namespace);
-//        return getMock(parameter.getType(), mocks);
-//    }
-//
-//    private Object getMock(Class<?> mockType, ExtensionContext.Store mocks) {
-//        return mocks.getOrComputeIfAbsent(mockType, type -> mock(mockType));
-//    }
-//}
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.ParameterContext;
+import org.junit.jupiter.api.extension.ParameterResolver;
+import org.junit.jupiter.api.extension.TestInstancePostProcessor;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.lang.reflect.Parameter;
+
+import static org.mockito.Mockito.mock;
+
+class MockitoExtension implements TestInstancePostProcessor, ParameterResolver {
+
+    @Override
+    public void postProcessTestInstance(Object testInstance, ExtensionContext context) {
+        MockitoAnnotations.initMocks(testInstance);
+    }
+
+    @Override
+    public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) {
+        return parameterContext.getParameter().isAnnotationPresent(InjectMock.class);
+    }
+
+    @Override
+    public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) {
+        return getMock(parameterContext.getParameter(), extensionContext);
+    }
+
+    private Object getMock(Parameter parameter, ExtensionContext extensionContext) {
+        Class<?> mockType = parameter.getType();
+        ExtensionContext.Store mocks = extensionContext.getStore(ExtensionContext.Namespace.create(MockitoExtension.class, mockType));
+        String mockName = getMockName(parameter);
+
+        if (mockName != null) {
+            return mocks.getOrComputeIfAbsent(mockName, key -> mock(mockType, mockName));
+        } else {
+            return mocks.getOrComputeIfAbsent(mockType.getCanonicalName(), key -> mock(mockType));
+        }
+    }
+
+
+    private String getMockName(Parameter parameter) {
+        String explicitMockName = parameter.getAnnotation(InjectMock.class).name().trim();
+        if (!explicitMockName.isEmpty()) {
+            return explicitMockName;
+        } else if (parameter.isNamePresent()) {
+            return parameter.getName();
+        }
+        return null;
+    }
+
+}

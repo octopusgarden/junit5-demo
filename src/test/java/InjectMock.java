@@ -5,5 +5,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface InjectMock {
+@interface InjectMock {
+    String name() default "";
 }
