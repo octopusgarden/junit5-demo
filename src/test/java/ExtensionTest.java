@@ -10,6 +10,9 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class ExtensionTest {
+    public ExtensionTest() {
+        System.out.print("Test Created");
+    }
 
     @BeforeEach
     void initialize(@InjectMock User user) {
