@@ -11,7 +11,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class ExtensionTest {
     public ExtensionTest() {
-        System.out.print("Test Created");
+        System.out.println("Test Created");
     }
 
     @BeforeEach

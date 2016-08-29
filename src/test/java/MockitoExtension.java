@@ -11,7 +11,7 @@ class MockitoExtension implements TestInstancePostProcessor, ParameterResolver {
 
     @Override
     public void postProcessTestInstance(Object testInstance, ExtensionContext context) {
-        System.out.print("Post Process");
+        System.out.println("We are running:" + context.getDisplayName());
     }
 
     @Override
