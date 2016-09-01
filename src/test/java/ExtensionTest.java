@@ -1,22 +1,27 @@
+
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class ExtensionTest {
+    public ExtensionTest() {
+        System.out.println("Test Created");
+    }
 
     @BeforeEach
-    void init(@Mock Person person) {
-        when(person.getName()).thenReturn("Dilbert");
+    void initialize(@InjectMock User user) {
+        when(user.getName()).thenReturn("Bob");
     }
 
     @Test
-    void simpleTestWithInjectedMock(@Mock Person person) {
-        assertEquals("Dilbert", person.getName());
+    void firstTestWithInjectedMock(@InjectMock User user) {
+        assertEquals("Bob", user.getName());
     }
 
 }

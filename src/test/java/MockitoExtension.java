@@ -2,8 +2,6 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolver;
 import org.junit.jupiter.api.extension.TestInstancePostProcessor;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import java.lang.reflect.Parameter;
 
@@ -13,12 +11,12 @@ class MockitoExtension implements TestInstancePostProcessor, ParameterResolver {
 
     @Override
     public void postProcessTestInstance(Object testInstance, ExtensionContext context) {
-        MockitoAnnotations.initMocks(testInstance);
+        System.out.println("We are running:" + context.getDisplayName());
     }
 
     @Override
     public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) {
-        return parameterContext.getParameter().isAnnotationPresent(Mock.class);
+        return parameterContext.getParameter().isAnnotationPresent(InjectMock.class);
     }
 
     @Override
@@ -38,8 +36,9 @@ class MockitoExtension implements TestInstancePostProcessor, ParameterResolver {
         }
     }
 
+
     private String getMockName(Parameter parameter) {
-        String explicitMockName = parameter.getAnnotation(Mock.class).name().trim();
+        String explicitMockName = parameter.getAnnotation(InjectMock.class).name().trim();
         if (!explicitMockName.isEmpty()) {
             return explicitMockName;
         } else if (parameter.isNamePresent()) {

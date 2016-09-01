@@ -1,3 +1,3 @@
-public interface User {
+interface User {
     String getName();
 }
