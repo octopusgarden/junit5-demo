@@ -19,8 +19,8 @@ class AssertionTest {
 
     @Test
     void assertAllTest() {
-        assertAll(() -> assertTrue(1 + 1 == 2, () -> "1 plus 1 is 2"),
-                () -> assertFalse(1 + 1 == 2, () -> "1 plus 1 is not 3"),
+        assertAll(() -> assertTrue(1 + 1 == 2, () -> "1 plus 1 should be 2"),
+                () -> assertTrue(1 + 1 == 3, () -> "1 plus 1 should be 2"),
                 () -> assertNotNull(null, () -> "null is null"));
     }
 
